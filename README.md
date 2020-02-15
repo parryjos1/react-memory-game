@@ -1,8 +1,8 @@
-Live site: 
+Live site: <https://parryjos1.github.io/react-memory-game>
 
 ## Installation Instructions
 
-Or play live site here: 
+Or play live site here: <https://parryjos1.github.io/react-memory-game>
 
 1. Clone the repo to you local machine
 2. run npm install to install node_modules
