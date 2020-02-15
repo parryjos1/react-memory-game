@@ -19,7 +19,7 @@ export default function Board({
                     type={card.type} 
                     id={card.id}
                     width={dimension / 4.5}
-                    height={dimension / 4.5}
+                    height={dimension / 3}
                     flipped={flipped.includes(card.id)}
                     handleClick={handleClick}
                     front={card.photoURL}

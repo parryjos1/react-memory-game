@@ -74,6 +74,9 @@ function App() {
         disabled={disabled}
         solved={solved}
       />
+
+      <hr></hr>
+      Josh Parry
     </div>
   );
 }

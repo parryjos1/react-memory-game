@@ -1,8 +1,15 @@
 .flip-container {
     perspective: 1000px;
     display: inline-block;
-    border: 1px solid white;
-    background: black;
+    /* background: black; */
+    border-radius: 28px 28px 28px 28px;
+    -moz-border-radius: 28px 28px 28px 28px;
+    -webkit-box-shadow: 1px 0px 8px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 0px 8px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 0px 8px 0px rgba(0,0,0,0.75);
+    border: 1px solid black;
+    margin: 10px;
+
 }
 
 .flip-container.flipped .flipper {
@@ -26,9 +33,13 @@
 .back {
     z-index: 2;
     /* for firefox */
-    transform: rotateY(0deg)
+    transform: rotateY(0deg);
+    border-radius: 23px 23px 23px 23px;
+    -moz-border-radius: 23px 23px 23px 23px;
 }
 
 .front {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
+    border-radius: 23px 23px 23px 23px;
+    -moz-border-radius: 23px 23px 23px 23px;
 }

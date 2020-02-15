@@ -3,6 +3,7 @@ import React from 'react';
 // props received are the props expected
 import PropTypes from 'prop-types';
 import './cardStyle.css';
+import BackImage from '../../icons/poker.svg'
 
 // TODO: destructured props
 export default function Card({ 
@@ -28,7 +29,7 @@ export default function Card({
                     height, width
                 }}
                 className={flipped ? 'front' : 'back'}
-                src={flipped || solved ? front : 'https://picsum.photos/id/237/200/300' }
+                src={flipped || solved ? front : BackImage }
             ></img>
         </div>
     </div>
