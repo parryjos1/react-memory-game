@@ -9,17 +9,17 @@ export default function Card({
     handleClick, 
     id, 
     flipped, 
-    back, 
-    front, 
     height, 
-    width 
+    width,
+    front,
+    disabled 
 }) {
     return <div 
         className={`flip-container ${flipped ? 'flipped' : ''}`}
         style={{
             width, height
         }}
-        onClick={() => handleClick(id)}
+        onClick={() => disabled ? null : handleClick(id)}
     >
         <div className="flipper">
             <img
@@ -27,7 +27,7 @@ export default function Card({
                     height, width
                 }}
                 className={flipped ? 'front' : 'back'}
-                src={flipped ? front : back }
+                src={flipped ? front : 'https://picsum.photos/id/237/200/300' }
             ></img>
         </div>
     </div>
@@ -42,4 +42,5 @@ Card.propTypes = {
     front: PropTypes.string.isRequired,
     height: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
+    disabled: PropTypes.bool.isRequired
 }

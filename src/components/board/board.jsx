@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../card/card';
+import './boardStyles.css'
 
-export default function Board({ cards,
-
+export default function Board({ 
+    cards,
     flipped,
-    handleClick
+    handleClick,
+    dimension,
+    disabled
 }) {
     return <div className = "board">
         {
@@ -14,10 +17,12 @@ export default function Board({ cards,
                     key ={card.id}
                     type={card.type} 
                     id={card.id}
-                    width={card.height}
-                    height={card.width}
+                    width={dimension / 4.5}
+                    height={dimension / 4.5}
                     flipped={flipped.includes(card.id)}
-                    handleClick={() => handleClick(card.id)}
+                    handleClick={handleClick}
+                    disabled={disabled}
+                    front={card.photoURL}
                 />
             ))
         }
@@ -25,9 +30,11 @@ export default function Board({ cards,
 }
 
 Board.propTypes = {
+    dimension: PropTypes.number.isRequired,
     cards: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     flipped: PropTypes.arrayOf(PropTypes.number).isRequired,
     handleClick: PropTypes.func.isRequired,
+    disabled: PropTypes.bool.isRequired,
 }
 
 {/* <Card 

@@ -17,5 +17,9 @@ Deployed with gh-pages
 
 ### Features
 
+### Bugs to Fix
+
+- Very small chance more than two pairs can have the same photo
+
 
 
