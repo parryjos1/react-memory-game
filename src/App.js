@@ -23,11 +23,28 @@ function App() {
     } else {
       if (sameCardClicked(id)) return
       setFlipped([flipped[0], id])
+      if(isMatch(id)) {
+        setSolved([...solved, flipped[0], id])
+        resetCards() 
+      } else {
+        // reset the cards
+        setTimeout(resetCards, 1200)
+      }
     }
-    setFlipped([...flipped, id])
+    // setFlipped([...flipped, id])
   }
 
+  const resetCards = () => {
+    setFlipped([])
+    setDisabled(false)
+  }
   const sameCardClicked = (id) => flipped.includes(id)
+
+  const isMatch = (id) => {
+    const clickedCard = cards.find(card => card.id === id)
+    const flippedCard = cards.find(card => flipped[0] === card.id)
+    return flippedCard.type === clickedCard.type 
+  };
 
   // TODO: replaces component did unmount
   useEffect(() => {
@@ -55,6 +72,7 @@ function App() {
         flipped={flipped}
         handleClick={handleClick}
         disabled={disabled}
+        solved={solved}
       />
     </div>
   );
